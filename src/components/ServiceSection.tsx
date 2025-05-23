@@ -5,16 +5,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const ServiceSection = () => {
   const mainPackage = {
-    name: "Yahoo GlobeNewsWire Package",
+    name: "LaunchPress Package",
     price: "$600",
     description: "Our main package featuring premium distribution across major platforms",
     features: [
       "Yahoo Finance publication", 
-      "GlobeNewsWire distribution", 
       "MSN",
       "Digital Journal",
       "Business Insider exposure", 
-      "Morning Star listing", 
       "Associated Press inclusion", 
       "Market Watch publication", 
       "Benzinga coverage", 
@@ -142,8 +140,8 @@ const ServiceSection = () => {
                   ))}
                 </CarouselContent>
                 <div className="flex items-center justify-center mt-4 gap-2">
-                  <CarouselPrevious className="relative static left-0 right-0 translate-y-0 h-10 w-10" />
-                  <CarouselNext className="relative static left-0 right-0 translate-y-0 h-10 w-10" />
+                  <CarouselPrevious className="relative left-0 right-0 translate-y-0 h-10 w-10" />
+                  <CarouselNext className="relative left-0 right-0 translate-y-0 h-10 w-10" />
                 </div>
               </Carousel>
             </div>

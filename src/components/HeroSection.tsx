@@ -5,7 +5,7 @@ const HeroSection = () => {
     // Define top row logos (non-TV networks) - now with 6 items including the new ones
     const topRowLogos = [
       { src: "/lovable-uploads/f6b7a8f2-c1cd-4f02-a37f-f0386dfc3780.png", alt: "Yahoo Finance" },
-      { src: "/lovable-uploads/Morningstar.png", alt: "Morningstar" },
+      { src: "/lovable-uploads/BI.png", alt: "Business Insider" },
       { src: "/lovable-uploads/e813b4af-3032-4d85-99d2-a60954ddb18b.png", alt: "Digital Journal" },
       { src: "/lovable-uploads/4100bf70-914b-4b92-9a94-2fe53b32dd72.png", alt: "MSN" },
       { src: "/lovable-uploads/a3188fa1-3425-4a5f-96e7-6c872903f3a8.png", alt: "Associated Press" },

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,19 +18,34 @@ const ContactSection = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulating form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Reset the form submitted state after 3 seconds
-      setTimeout(() => setIsSubmitted(false), 3000);
-    }, 1500);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/contact@launchpress.me", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+
+        // Hide success message after 3 seconds
+        setTimeout(() => setIsSubmitted(false), 3000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again later.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -49,7 +63,7 @@ const ContactSection = () => {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="glass-card p-8 rounded-lg reveal">
             <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-            
+
             {isSubmitted ? (
               <div className="text-center py-10">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
@@ -107,7 +121,7 @@ const ContactSection = () => {
                 Have questions about our services? Reach out to us directly.
               </p>
             </div>
-            
+
             <div className="space-y-6 w-full text-center">
               <a
                 href="mailto:contact@launchpress.me"

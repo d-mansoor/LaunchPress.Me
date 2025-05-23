@@ -46,12 +46,20 @@ const ServiceSection = () => {
     },
     // Keep these and remove JobzSA and TOP 508 examples
     {
-      image: "/lovable-uploads/f728b7e4-3b3c-4f89-8317-8e037940e3f8.png",
-      title: "SHORTFOMO Launches Creator Program in Dubai to Bridge Local Talent with Small Business Owners"
-    },
-    {
       image: "/lovable-uploads/74030156-dd93-465e-86ca-649437d59340.png",
       title: "Exploring OBN Digital's Commitment to Empowering Businesses with Comprehensive Marketing Solutions"
+    },
+    {
+      image: "/lovable-uploads/cw_pr.png",
+      title: "Aisles Introduces DREAM: The Next Evolution in AI-Powered Virtual Reality"
+    },
+    {
+      image: "/lovable-uploads/cbs_pr.png",
+      title: "Tom Hibberd Shares Expert Secrets in 'How to Choose a Wedding Photographer"
+    },
+    {
+      image: "/lovable-uploads/abc_pr2.png",
+      title: "GeekyAnts Expands Footprint in the U.S. to Serve Growing Demand for Digital Innovation"
     }
   ];
   

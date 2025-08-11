@@ -10,7 +10,6 @@ const ServiceSection = () => {
     description: "Our main package featuring premium distribution across major platforms",
     features: [
       "Yahoo Finance publication", 
-      "MSN",
       "Digital Journal",
       "Business Insider exposure", 
       "Associated Press inclusion", 

@@ -35,7 +35,7 @@ const HeroSection = () => {
             Amplify Your <span className="gradient-text">Brand Voice</span> Through Premium Media Platforms
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-           Get your press releases published on Yahoo Finance, MSN, Business Insider and ABC, CBS, NBC, FOX and CW affiliates and many more—to boost visibility, build trust and credibility
+           Get your press releases published on Yahoo Finance, Business Insider and ABC, CBS, NBC, FOX and CW affiliates and many more—to boost visibility, build trust and credibility
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 

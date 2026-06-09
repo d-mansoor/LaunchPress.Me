@@ -4,23 +4,63 @@ import { Package, Globe, Zap, Crown } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const ServiceSection = () => {
-  const mainPackage = {
-    name: "LaunchPress Package",
-    price: "$600",
-    description: "Our main package featuring premium distribution across major platforms",
-    features: [
-      "Yahoo Finance publication", 
-      "Digital Journal",
-      "Business Insider exposure", 
-      "Associated Press inclusion", 
-      "Market Watch publication", 
-      "Benzinga coverage", 
-      "Street Insider placement", 
-      "ABC, CBS, NBC, FOX and CW affiliates", 
-      "Distribution to 500+ additional sites"
-    ],
-    popular: true
-  };
+  const packages = [
+    {
+      name: "LaunchPress Basic",
+      price: "$150",
+      description: "Get your story out to trusted local and national TV affiliates",
+      features: [
+        "ABC affiliates",
+        "CBS affiliates",
+        "NBC affiliates",
+        "FOX affiliates",
+        "CW affiliates"
+      ],
+      popular: false,
+      icon: <Zap className="h-5 w-5 text-primary" />
+    },
+    {
+      name: "LaunchPress Pro",
+      price: "$350",
+      description: "Broad financial and business distribution with 250+ additional sites",
+      features: [
+        "Yahoo Finance",
+        "Business Insider",
+        "AP (Associated Press)",
+        "Benzinga",
+        "Digital Journal",
+        "Globe and Mail",
+        "Barchart",
+        "Central Charts",
+        "Street Insider",
+        "ADVFN",
+        "CEO.CA",
+        "250+ more sites"
+      ],
+      popular: true,
+      icon: <Package className="h-5 w-5 text-primary" />
+    },
+    {
+      name: "LaunchPress Premium",
+      price: "$600",
+      description: "Maximum reach with top-tier outlets, newswire, and 200+ more sites",
+      features: [
+        "Yahoo Finance",
+        "Globe Newswire",
+        "Business Insider",
+        "AP (Associated Press)",
+        "Benzinga",
+        "Street Insider",
+        "ADVFN",
+        "CEO.CA",
+        "Manila Times",
+        "ABC, CBS, NBC, FOX and CW affiliates",
+        "200+ more sites"
+      ],
+      popular: false,
+      icon: <Crown className="h-5 w-5 text-primary" />
+    }
+  ];
   const pressReleaseExamples = [
     {
       image: "/lovable-uploads/444bd38d-6273-4ed5-9ac6-7fe7bf5a979b.png",

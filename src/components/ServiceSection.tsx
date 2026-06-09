@@ -1,26 +1,66 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Globe, Award } from "lucide-react";
+import { Package, Globe, Zap, Crown } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const ServiceSection = () => {
-  const mainPackage = {
-    name: "LaunchPress Package",
-    price: "$600",
-    description: "Our main package featuring premium distribution across major platforms",
-    features: [
-      "Yahoo Finance publication", 
-      "Digital Journal",
-      "Business Insider exposure", 
-      "Associated Press inclusion", 
-      "Market Watch publication", 
-      "Benzinga coverage", 
-      "Street Insider placement", 
-      "ABC, CBS, NBC, FOX and CW affiliates", 
-      "Distribution to 500+ additional sites"
-    ],
-    popular: true
-  };
+  const packages = [
+    {
+      name: "LaunchPress Basic",
+      price: "$150",
+      description: "Get your story out to trusted local and national TV affiliates",
+      features: [
+        "ABC affiliates",
+        "CBS affiliates",
+        "NBC affiliates",
+        "FOX affiliates",
+        "CW affiliates"
+      ],
+      popular: false,
+      icon: <Zap className="h-5 w-5 text-primary" />
+    },
+    {
+      name: "LaunchPress Pro",
+      price: "$350",
+      description: "Broad financial and business distribution with 250+ additional sites",
+      features: [
+        "Yahoo Finance",
+        "Business Insider",
+        "AP (Associated Press)",
+        "Benzinga",
+        "Digital Journal",
+        "Globe and Mail",
+        "Barchart",
+        "Central Charts",
+        "Street Insider",
+        "ADVFN",
+        "CEO.CA",
+        "250+ more sites"
+      ],
+      popular: true,
+      icon: <Package className="h-5 w-5 text-primary" />
+    },
+    {
+      name: "LaunchPress Premium",
+      price: "$600",
+      description: "Maximum reach with top-tier outlets, newswire, and 200+ more sites",
+      features: [
+        "Yahoo Finance",
+        "Globe Newswire",
+        "Business Insider",
+        "AP (Associated Press)",
+        "Benzinga",
+        "Street Insider",
+        "ADVFN",
+        "CEO.CA",
+        "Manila Times",
+        "ABC, CBS, NBC, FOX and CW affiliates",
+        "200+ more sites"
+      ],
+      popular: false,
+      icon: <Crown className="h-5 w-5 text-primary" />
+    }
+  ];
   const pressReleaseExamples = [
     {
       image: "/lovable-uploads/444bd38d-6273-4ed5-9ac6-7fe7bf5a979b.png",
@@ -70,45 +110,52 @@ const ServiceSection = () => {
             Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal">
-            Choose our premium package that distributes your press release across major media platforms.
+            Choose the package that fits your needs and distributes your press release across major media platforms.
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto">
-          <Card className="relative overflow-hidden reveal border-primary/50 shadow-lg shadow-primary/10">
-            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
-              Main Package
-            </div>
-            <CardHeader>
-              <div className="flex items-center gap-2 mb-2">
-                <Package className="h-5 w-5 text-primary" />
-                <CardTitle>{mainPackage.name}</CardTitle>
-              </div>
-              <div className="flex items-end gap-1 mt-2">
-                <span className="text-3xl font-bold">{mainPackage.price}</span>
-                <span className="text-muted-foreground mb-1">/package</span>
-              </div>
-              <CardDescription className="mt-2">{mainPackage.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {mainPackage.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button 
-                className="w-full bg-primary hover:bg-primary/90" 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-              >
-                Get Started
-              </Button>
-            </CardFooter>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {packages.map((pkg) => (
+            <Card 
+              key={pkg.name} 
+              className={`relative overflow-hidden reveal ${pkg.popular ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-border'}`}
+            >
+              {pkg.popular && (
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
+                  Popular
+                </div>
+              )}
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  {pkg.icon}
+                  <CardTitle>{pkg.name}</CardTitle>
+                </div>
+                <div className="flex items-end gap-1 mt-2">
+                  <span className="text-3xl font-bold">{pkg.price}</span>
+                  <span className="text-muted-foreground mb-1">/package</span>
+                </div>
+                <CardDescription className="mt-2">{pkg.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90" 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
+                >
+                  Get Started
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
 
         <div className="mt-16 max-w-5xl mx-auto reveal">

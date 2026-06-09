@@ -110,7 +110,7 @@ const ServiceSection = () => {
             Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto reveal">
-            Choose our premium package that distributes your press release across major media platforms.
+            Choose the package that fits your needs and distributes your press release across major media platforms.
           </p>
         </div>
 

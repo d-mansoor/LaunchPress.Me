@@ -36,7 +36,7 @@ const HowSection = () => {
     {
       number: "05",
       title: "Your Story Gets Published",
-      description: "Your press release is published on major media sites like Yahoo Finance, MSN, Business Insider and ABC, CBS, NBC, FOX and CW affiliates and many more.",
+      description: "Your press release is published on major media sites like Yahoo Finance, Business Insider and ABC, CBS, NBC, FOX and CW affiliates and many more.",
       icon: Globe
     },
     {

@@ -114,41 +114,48 @@ const ServiceSection = () => {
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto">
-          <Card className="relative overflow-hidden reveal border-primary/50 shadow-lg shadow-primary/10">
-            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
-              Main Package
-            </div>
-            <CardHeader>
-              <div className="flex items-center gap-2 mb-2">
-                <Package className="h-5 w-5 text-primary" />
-                <CardTitle>{mainPackage.name}</CardTitle>
-              </div>
-              <div className="flex items-end gap-1 mt-2">
-                <span className="text-3xl font-bold">{mainPackage.price}</span>
-                <span className="text-muted-foreground mb-1">/package</span>
-              </div>
-              <CardDescription className="mt-2">{mainPackage.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {mainPackage.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter>
-              <Button 
-                className="w-full bg-primary hover:bg-primary/90" 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-              >
-                Get Started
-              </Button>
-            </CardFooter>
-          </Card>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {packages.map((pkg) => (
+            <Card 
+              key={pkg.name} 
+              className={`relative overflow-hidden reveal ${pkg.popular ? 'border-primary/50 shadow-lg shadow-primary/10' : 'border-border'}`}
+            >
+              {pkg.popular && (
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">
+                  Popular
+                </div>
+              )}
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  {pkg.icon}
+                  <CardTitle>{pkg.name}</CardTitle>
+                </div>
+                <div className="flex items-end gap-1 mt-2">
+                  <span className="text-3xl font-bold">{pkg.price}</span>
+                  <span className="text-muted-foreground mb-1">/package</span>
+                </div>
+                <CardDescription className="mt-2">{pkg.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90" 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
+                >
+                  Get Started
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
 
         <div className="mt-16 max-w-5xl mx-auto reveal">
